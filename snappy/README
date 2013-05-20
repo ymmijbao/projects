@@ -1,1 +1,16 @@
 SnapPY README
+
+1) You must be running Python 3
+2) Go into the /visualizer directory and run "python snappy_server.py" 
+3) Leave the server running and open a new tab
+4) Change the path to the /ui directory and run "python -m http.server"
+5) Enter "localhost:8000" into your browser and the UI should be running
+
+
+Currently, SnapPY only supports a subset of Python code. It lacks the support for 
+exception handling, nested data structures and complex data structures (i.e. trees
+and graphs), and objects and classes. 
+
+
+Here is a YouTube video demonstrating how SnapPY should work:
+http://www.youtube.com/watch?v=1ZKc-SaKQzI
