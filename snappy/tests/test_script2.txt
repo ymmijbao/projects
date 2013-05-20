@@ -1,0 +1,6 @@
+def fun():
+    return 1
+
+a = fun
+a.b = 1
+a()

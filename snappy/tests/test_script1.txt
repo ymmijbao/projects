@@ -1,0 +1,12 @@
+func = 1
+
+def func(x):
+	def add(a, b):
+		nonlocal x
+		c = a + b
+		c =  a * b
+		return 2
+	add(x, x)
+
+func(2)
+

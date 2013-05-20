@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>SnapPY</title>
+    
+    <script src="jquery-ui-1.10.3/js/jquery-1.9.1.js"></script>
+    <script src="jquery-ui-1.10.3/js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="build/js/jquery.jsPlumb-1.4.0-all.js"></script>
+    <script src="renderer.js"></script>
+    
+    <link rel="stylesheet" href="jquery-ui-1.10.3/development-bundle/themes/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="snappy.css" />
+
+    <script src="codemirror-3.12/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="codemirror-3.12/lib/codemirror.css">
+    <script src="codemirror-3.12/mode/python/python.js"></script>
+
+    <script>
+        $(function() { 
+            
+            var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                lineNumbers: true
+            });
+
+            set_editor(editor);
+
+            editor.getWrapperElement().ondblclick = function(event) {
+                var lineno = editor.getCursor().line;
+                if ((lineno + 1) in breakpoints) {
+                    if(confirm("Remove breakpoint from line " + (lineno + 1) + "?")) {
+                        remove_breakpoint(lineno + 1);
+                    }
+                } else {
+                    if(confirm("Set a breakpoint on line " + (lineno + 1) + "?")) {
+                        set_breakpoint(lineno + 1);
+                    }
+                }
+            };
+
+            $("#top-tabs").tabs(); 
+            $("#draw_button").button();
+            $("#draw_button").click(
+                function(event) {
+                event.preventDefault();
+
+                $("#next_button").remove();
+                $("#cont_button").remove();
+                $("#buttons").append("<button id='next_button'>Next</button>");
+                $("#buttons").append("<button id='cont_button'>Continue</button>");
+                $("#next_button").button();
+                $("#cont_button").button();
+
+                $.ajax({
+                    url: "http://localhost:8880",
+                    type: "post",
+                    contentType: "application/json",
+                    data: JSON.stringify(editor.getValue()),
+                    success: function(data, textStatus, request) {
+                        console.log(data);
+                        start_rendering(data);
+                    },
+                    error: function(err) { 
+                        console.log(err); 
+                    }
+                });
+            });
+      });
+      </script>
+  </head>
+
+   <body bgcolor="#E8E8E8">
+        <center><img src="jquery-ui-1.10.3/development-bundle/themes/ui-lightness/images/snappy.png" height="240" width="1000"></center>
+        
+        <div id="top-tabs">
+            <div id = "buttons-div">
+                <center id="buttons">
+                    <button id="draw_button">Draw</button>
+                </center>
+            </div>
+        </div>
+  
+        <div id="page-container">
+            <div id="code-tab">
+                <textarea id="code" cols="70" rows="80">TYPE YOUR CODE HERE!</textarea>   
+            </div>
+            <div id="stack"></div>
+            <div id="heap"></div>
+            <div id="control"></div>
+        </div>
+    </body>
+</html>
