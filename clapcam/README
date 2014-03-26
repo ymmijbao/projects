@@ -1,0 +1,11 @@
+Clap Cam is an Android application developed by Jimmy Bao. It allows users to take pictures by
+clapping twice. Other features include:
+
+- Supports both front-facing and rear-facing cameras 
+- Supports both portrait and landscape mode
+- Always listening for claps right when the app is launched so the user doesn't have to toggle any buttons
+- Allows for sharing with friends via any other apps that support images natively from the application
+- A clapping icon that tells the user when the application has picked up on a clap so the user can clearly
+tell when/if the application hears the clap
+
+*** THE SOURCE CODE WILL BE UPLOADED SOON *** 
