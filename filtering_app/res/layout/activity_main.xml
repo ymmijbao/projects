@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/homepage"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+   	<TextView
+		android:id="@+id/textView1"
+	    android:layout_width="wrap_content"
+	   	android:layout_height="wrap_content"
+	   	android:layout_alignParentTop="true"
+	   	android:layout_centerHorizontal="true"
+	   	android:layout_marginTop="189dp"
+	   	android:textColor="#FFFFFF"
+	   	android:text="Please select to load an Image!"
+	   	android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/desc" 
+   		android:layout_marginTop="30dp" 
+   		android:layout_marginBottom="90dp"/>
+
+    <RelativeLayout
+        android:id="@+id/insideLayout"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+	   	<Button
+	   	    android:id="@+id/buttonLoadPicture"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:layout_alignBaseline="@+id/buttonConfirmPicture"
+	   	    android:layout_alignBottom="@+id/buttonConfirmPicture"
+	   	    android:layout_marginLeft="55dp"
+	   	    android:textColor="#FFFFFF"
+	   	    android:text="@string/Loading" />
+	
+	   	<Button
+	   	    android:id="@+id/buttonConfirmPicture"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:layout_alignParentBottom="true"
+	   	    android:layout_marginBottom="50dp"
+	   	    android:layout_marginLeft="60dp"
+	   	    android:layout_toRightOf="@+id/buttonLoadPicture"
+	   	   	android:textColor="#FFFFFF"
+	   	    android:text="@string/confirm" />
+	</RelativeLayout>
+
+</RelativeLayout>

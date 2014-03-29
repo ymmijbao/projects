@@ -1,0 +1,9 @@
+Grayscale Filtering is an Android application developed by Jimmy Bao. It allows users to alter the image by
+applying a filter based on the user's touch. Other featured that I implemented because I thought it would
+make the overall usability of the app better:
+
+- Being able to select an image from the Gallery
+- Option of either using the "Grayscale" or the "Bright" filters
+- Option of saving the altered image into the Gallery
+
+Demo video: https://www.youtube.com/watch?v=XTsshz1DCP4

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:showAsAction="always"
+        android:title="@string/BrushSize"
+    	android:icon="@drawable/ic_action_edit" >
+    	
+        <menu>
+        	<group android:checkableBehavior="single">
+            	<item android:id="@+id/choice_10" android:title="10pt" android:showAsAction="never" android:checked="true" />
+            	<item android:id="@+id/choice_20" android:title="20pt" android:showAsAction="never" />
+            	<item android:id="@+id/choice_40" android:title="40pt" android:showAsAction="never" />
+        	</group>
+     	</menu>    	
+    </item>
+</menu>
