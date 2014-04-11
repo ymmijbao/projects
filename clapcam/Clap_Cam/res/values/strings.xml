@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Clap Cam</string>
+    <string name="help_message">INFO:\n\nClap twice (within 2 seconds of each other) to take a picture.\n\nA hand icon will pop up at the bottom center of the screen to indicate that the app has registered the clap.</string>
+
+</resources>
